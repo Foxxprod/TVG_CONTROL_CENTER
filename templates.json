@@ -1,0 +1,43 @@
+[
+  {
+    "_example": true,
+    "_note": "Entree de documentation, ignoree au chargement. JSON n'accepte pas les commentaires : cette entree liste tous les champs possibles. Seuls section/label/template/layer sont obligatoires. Un champ inconnu (faute de frappe) est signale dans un bandeau rouge de l'interface. Une cle \"_comment\" est toleree sur chaque entree.",
+    "section": "une des cles de project.SECTIONS (obligatoire)",
+    "row": "numero de ligne dans la section (ENTIER), defaut 1",
+    "column": "numero de colonne (ENTIER), defaut 1",
+    "label": "texte affiche sur le bouton (obligatoire)",
+    "template": "nom du template CasparCG a charger (obligatoire)",
+    "layer": "layer video CasparCG (obligatoire, ENTIER) - le meme en preview et au programme",
+    "cg_layer": "layer d'empilement CG dans le layer video, defaut 1",
+    "extra_data": {
+      "cle_du_champ_template": "valeur fixe toujours envoyee avec ce bouton"
+    },
+    "multipage_on": "true/false, fleches < > de changement de page, defaut false",
+    "field_page": "champ template recevant le numero de page, defaut 'page'",
+    "reset_page_on_play": "true/false, remet la page a 1 a chaque play depuis idle, defaut false",
+    "free_texts": [
+      {
+        "field": "champ template (obligatoire) - SANS options : simple texte libre",
+        "label": "libelle affiche (optionnel, defaut = field)"
+      },
+      {
+        "field": "champ template - AVEC options : liste a choix + texte libre + icones +/-",
+        "label": "libelle affiche",
+        "options": ["Choix 1", "Choix 2"]
+      },
+      {
+        "field": "champ template - type number : compteur - [valeur] +, reste modifiable a l'antenne et pousse chaque changement en direct",
+        "label": "libelle affiche",
+        "type": "number",
+        "min": "valeur minimale (optionnel)",
+        "max": "valeur maximale (optionnel)",
+        "step": "pas des boutons -/+ (optionnel, defaut 1)",
+        "default": "valeur de depart (optionnel, defaut 0)"
+      }
+    ],
+    "second_cg": "nom d'un second template joue/stoppe/mis a jour en meme temps (optionnel)",
+    "second_cg_layer": "layer video du second CG (optionnel, defaut = layer du principal)",
+    "send_ip": "true/false, envoie l'IP de la source de donnees (uniquement si project.DATA_SOURCE_CLASS est defini)",
+    "field_ip": "champ template recevant l'ip, defaut 'ip'"
+  }
+]

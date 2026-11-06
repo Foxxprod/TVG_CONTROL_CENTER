@@ -1,0 +1,61 @@
+__APP_NAME__ - CONTEXTE DU PROJET
+============================================
+
+Projet genere a partir de la base commune "Control Center CasparCG"
+(skill casparcg-control-center). A tenir a jour a chaque evolution.
+
+
+1. OBJECTIF DU PROJET
+----------------------
+
+(A remplir : evenement/emission, ce que pilote l'operateur, contexte de
+diffusion, nombre d'operateurs.)
+
+
+2. BASE COMMUNE (NE PAS DIVERGER SANS RAISON)
+----------------------------------------------
+
+- main.py           : point d'entree, instances uniques caspar/data.
+- project.py        : SEUL fichier Python propre au projet (nom, sections,
+                      source de donnees, boutons header/footer, onglet medias).
+- casparcg.py       : client AMCP (templates + medias).
+- scene_button.py   : bouton de grille (preview -> Take -> programme,
+                      pastille IN/OUT, multipage, textes libres, listes,
+                      compteurs, extra_data, second CG).
+- interface.py      : header / corps (onglets GRAPHIQUES + MEDIAS, mode
+                      edition) / footer.
+- button_editor.py  : boite de dialogue du mode edition.
+- buttons_config.py : chargement + VALIDATION de templates.json (erreurs
+                      affichees dans un bandeau, fichier jamais ecrase s'il
+                      est illisible).
+- media_browser.py  : onglet MEDIAS (CLS, lecture sur layer, SWAP...).
+- data_source.py    : contrat de source de donnees (None par defaut).
+- app_config.py / paths.py / app.spec : config machine, chemins, compilation.
+
+Fichiers de donnees : templates.json (catalogue de boutons, commite,
+editable aussi depuis le mode edition) / config.json (machine, non commite).
+
+
+3. SPECIFICITES DE CE PROJET
+-----------------------------
+
+Sections : (lister)
+Plage de layers graphiques : (ex: 10-49) / medias : (ex: 50+)
+Source de donnees : aucune | (decrire format, adresse, champs utilises)
+Options de bouton ajoutees : (lister, avec leur raison)
+Templates CasparCG et champs attendus : (lister)
+
+
+4. DECISIONS / PIEGES PROPRES A CE PROJET
+------------------------------------------
+
+(Consigner ici chaque decision explicite de l'utilisateur et chaque bug
+reel rencontre, avec sa cause - meme style que le Biath Control Center.)
+
+
+5. COMPILATION
+---------------
+
+pip install -r requirements.txt pyinstaller
+pyinstaller app.spec      -> dist\<APP_SLUG>\<APP_SLUG>.exe (garder le dossier entier)
+icon.ico doit etre un vrai .ico.
